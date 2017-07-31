@@ -1,0 +1,10 @@
+
+<app-player #playerA [title]="'Playlist A'" [list]="listA" [mainVolume]="mainVolume"></app-player>
+
+<section class="main-ctrl">
+  <button (click)="playerA.start(); playerB.start();" md-fab><md-icon>play_arrow</md-icon></button>
+  <md-slider min="0" max="100" step="1" [(ngModel)]="mainVolume" thumbLabel tickInterval="1"></md-slider>
+  <button (click)="playerA.pause(); playerB.pause();" md-fab><md-icon>pause</md-icon></button>
+</section>
+
+<app-player #playerB [title]="'Playlist B'" [list]="listB" [mainVolume]="mainVolume"></app-player>

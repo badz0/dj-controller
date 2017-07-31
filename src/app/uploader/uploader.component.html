@@ -1,0 +1,37 @@
+<section class="playlist">
+  <h2 class="playlist__title">
+    Playlist A
+  </h2>
+  <form class="files-form">
+    <label for="fileA" class="files-form__label">
+      <i class="material-icons">file_upload</i>
+      Choose files
+    </label>
+    <input class="files-form__input" id="fileA" name="fileA" type="file" (change)="onChange($event, 'A')" multiple accept="audio/*" />
+  </form>
+  <ol>
+    <li *ngFor="let song of listA; let i = index" class="file">
+     <span class="file__name">{{song.file.name}}</span>
+      <span class="file__del-btn material-icons" (click)="deleteSong(i, 'A')">close</span>
+    </li>
+  </ol>
+</section>
+
+<section class="playlist">
+  <h2 class="playlist__title">
+    Playlist B
+  </h2>
+  <form class="files-form">
+    <label for="fileB" class="files-form__label">
+      <i class="material-icons">file_upload</i>
+      Choose files
+    </label>
+    <input class="files-form__input" id="fileB" name="fileB" type="file" (change)="onChange($event, 'B')" multiple accept="audio/*" />
+  </form>
+  <ol>
+    <li *ngFor="let song of listB; let i = index" class="file">
+      <span class="file__name">{{song.file.name}}</span>
+      <span class="file__del-btn material-icons" (click)="deleteSong(i, 'B')">close</span>
+    </li>
+  </ol>
+</section>
